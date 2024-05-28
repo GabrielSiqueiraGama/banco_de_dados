@@ -1,0 +1,10 @@
+## Para inciar o programa
+    mongosh
+## Para exibir os database já existentes
+    show dbs
+## Para criar uma tabela ou collection
+    db.createCollection("nome")
+## Para alterar entre as tabelas
+    use nome
+## Para apagar/deletar a collection
+    db.nome.drop()
