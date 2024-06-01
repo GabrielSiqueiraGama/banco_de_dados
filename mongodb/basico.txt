@@ -47,3 +47,7 @@
     db.comuns.remove({habilidades: {$exists: true}}, 1)
 ## Para remover a partir somente se for menor que determinado valor
     db.carros.remove({Ano: {$lt: 2016}})
+## Para relacionar dois databases 
+    db.donos.insert({nome: "Bluiz", carroId: ObjectId("6658ab3502194df78dcdcdf8")}) 
+## Para pesquisar usando o lookup, onde vai buscar a tabela que relaciona com o objeto
+    db.donos.aggregate([{$match: {nome: "Zhant"}}, {$lookup: {from: "carros", localField: "carroId", foreignField: "_id", as: "carro"}}])
